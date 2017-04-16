@@ -11,6 +11,11 @@ import UIKit
 class SecondViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
