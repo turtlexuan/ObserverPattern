@@ -12,23 +12,10 @@ class SecondViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        NotificationCenter.default.addObserver(forName: notificationName, object: nil, queue: nil) { (notification) in
-            
-            guard let value = notification.userInfo else { return }
-            guard let name = value["Username"] as? String else { return }
-            
-            print(name)
-            
-            self.resultLabel.text = "Your name is : \(name)"
-        }
     }
 
     override func didReceiveMemoryWarning() {
