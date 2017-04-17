@@ -26,8 +26,15 @@ class ViewController: UIViewController {
 
     @IBAction func sendAction(_ sender: Any) {
         
-        
+        NotificationCenter.default.post(name: notificationName, object: nil, userInfo: ["Username": self.nameTextField.text ?? ""])
     }
 
 }
+
+
+
+
+
+
+
 
